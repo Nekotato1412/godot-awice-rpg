@@ -1,0 +1,175 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="WindowDialog"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+popup_exclusive = true
+window_title = "Database"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = -4.0
+margin_top = 5.0
+margin_right = 636.0
+margin_bottom = 485.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/side_margin = 0
+tab_align = 0
+
+[node name="System" type="Control" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Field" type="Control" parent="TabContainer/System"]
+margin_left = 71.0
+margin_top = 13.0
+margin_right = 71.0
+margin_bottom = 13.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/System/Field"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -58.0
+margin_right = 94.0
+margin_bottom = 42.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/System/Field/VBoxContainer"]
+margin_right = 152.0
+margin_bottom = 14.0
+text = "Icon"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/System/Field/VBoxContainer"]
+margin_top = 18.0
+margin_right = 152.0
+margin_bottom = 42.0
+text = "res://path_to_icon.png"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Characters" type="Control" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Characters"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -316.0
+margin_top = -222.0
+margin_right = 316.0
+margin_bottom = 222.0
+
+[node name="Actor" type="Control" parent="TabContainer/Characters/HBoxContainer"]
+margin_right = 314.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="TabContainer/Characters/HBoxContainer/Actor"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -157.0
+margin_top = -444.0
+margin_right = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="TabContainer/Characters/HBoxContainer/Actor/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -124.0
+margin_top = -30.0
+margin_right = 190.0
+margin_bottom = -10.0
+rect_scale = Vector2( 0.8, 1 )
+size_flags_horizontal = 9
+shortcut_in_tooltip = false
+text = "Create a new Actor"
+
+[node name="Enemy" type="Control" parent="TabContainer/Characters/HBoxContainer"]
+margin_left = 318.0
+margin_right = 632.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="TabContainer/Characters/HBoxContainer/Enemy"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -157.0
+margin_top = -444.0
+margin_right = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="TabContainer/Characters/HBoxContainer/Enemy/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -124.0
+margin_top = -30.0
+margin_right = 190.0
+margin_bottom = -10.0
+rect_scale = Vector2( 0.8, 1 )
+size_flags_horizontal = 9
+shortcut_in_tooltip = false
+text = "Create a new Enemy"
+
+[node name="Items" type="Control" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Items"]
+anchor_right = 1.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 4
+
+[node name="Weapon" type="Button" parent="TabContainer/Items/VBoxContainer"]
+margin_right = 632.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text = "Weapon"
+
+[node name="Consumable" type="Button" parent="TabContainer/Items/VBoxContainer"]
+margin_top = 24.0
+margin_right = 632.0
+margin_bottom = 44.0
+size_flags_vertical = 0
+text = "Consumable"
+
+[node name="Item" type="Button" parent="TabContainer/Items/VBoxContainer"]
+margin_top = 48.0
+margin_right = 632.0
+margin_bottom = 68.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Item"
