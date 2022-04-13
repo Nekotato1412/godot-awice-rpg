@@ -76,3 +76,7 @@ enabled = true
 cast_to = Vector2( 0, 30 )
 collision_mask = 2
 collide_with_areas = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.8, 0.8 )

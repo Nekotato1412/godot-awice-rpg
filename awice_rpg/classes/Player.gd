@@ -41,7 +41,26 @@ func _physics_process(delta):
 	if velocity.length() != 0:
 		var angle = atan2(-velocity.x, velocity.y)
 		$RayCast2D.global_rotation = angle
-	
+		
+		if velocity.x > 0:
+			$Sprite.play("walk_right")
+		elif velocity.x < 0:
+			$Sprite.play("walk_left")
+		if velocity.y > 0:
+			$Sprite.play("walk_down")
+		elif velocity.y < 0:
+			$Sprite.play("walk_up")		
+	else:
+		var direction = abs(floor($RayCast2D.global_rotation))
+		if direction == 0:
+			$Sprite.play("idle_down")
+		elif direction == 1:
+			$Sprite.play("idle_left")
+		elif direction == 3:
+			$Sprite.play("idle_up")
+		elif direction == 2:
+			$Sprite.play("idle_right")	
+		
 	if Interact:
 		if Input.is_action_just_pressed("interact"):
 			if $RayCast2D.is_colliding():
@@ -57,7 +76,4 @@ func get_class():
 	return "Player"
 
 func is_class(value):
-	if value == "Player":
-		return true
-	else:
-		return false
+	return value == "Player"
